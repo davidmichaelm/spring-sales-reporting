@@ -15,12 +15,12 @@ public class AppConfig {
     @Bean
     SalesInput salesInput() {
         return new ConsoleSalesInput();
-        //return new FileSalesInput();
+//        return new FileSalesInput("sales.txt");
     }
 
     @Bean
     SalesReport salesReport() {
-        return new CountrySalesReport();
+        return new SummarySalesReport();
 //        return new DetailedSalesReport();
     }
 
@@ -28,6 +28,6 @@ public class AppConfig {
     ShippingPolicy shippingPolicy() {
         return new FreeShippingPolicy();
 //        return new FlatRateDomesticShippingPolicy();
-//        return new FreeShippingOverXShippingPolicy();
+//        return new FreeShippingOverXShippingPolicy(50.0);
     }
 }
